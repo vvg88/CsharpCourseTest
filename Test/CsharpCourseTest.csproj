@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandler.cs" />
+    <Compile Include="FibonachiCommandHandler.cs" />
+    <Compile Include="ICommandRun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomAndSortCommandHandler.cs" />
+    <Compile Include="StringHandleCommandHandler.cs" />
     <Compile Include="StringHelper.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

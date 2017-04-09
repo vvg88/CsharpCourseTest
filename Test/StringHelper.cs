@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Test
 {
@@ -20,7 +18,7 @@ namespace Test
             if (inputString == null)
                 return false;
 
-            return inputString == GetInverseString(); // Одинаковые строки являютсяя одной строкой в памяти
+            return inputString == GetInverseString();
         }
 
         public uint GetCountWords()
