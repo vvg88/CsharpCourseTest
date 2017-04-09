@@ -7,26 +7,23 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            var fibHandler = new FibonachiCommandHandler();
-            var randAndSortHandler = new RandomAndSortCommandHandler();
-            var strHandler = new StringHandleCommandHandler();
-
-            Dictionary<string, CommandHandler> commands = new Dictionary<string, CommandHandler>
+            List<CommandHandler> commands = new List<CommandHandler>
             {
-                {fibHandler.CommandName,  fibHandler},
-                {randAndSortHandler.CommandName, randAndSortHandler},
-                {strHandler.CommandName, strHandler}
+                new FibonachiCommandHandler(),
+                new RandomAndSortCommandHandler(),
+                new StringHandleCommandHandler()
             };
 
             Console.WriteLine("Введите команду: ");
             foreach(var comm in commands)
             {
-                Console.WriteLine(comm.Key);
+                Console.WriteLine(comm.CommandName);
             }
             string command = Console.ReadLine();
 
-            if (commands.ContainsKey(command))
-                commands[command].Run();
+            var commHandler = commands.Find(handler => handler.CommandName == command);
+            if (commHandler != null)
+                commHandler.Run();
             else
                 Console.WriteLine("Команда введена неверно!");
 
