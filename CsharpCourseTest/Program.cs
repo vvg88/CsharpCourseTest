@@ -7,11 +7,15 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            var fibHandler = new FibonachiCommandHandler();
+            var randAndSortHandler = new RandomAndSortCommandHandler();
+            var strHandler = new StringHandleCommandHandler();
+
             Dictionary<string, CommandHandler> commands = new Dictionary<string, CommandHandler>
             {
-                {"ShowFibonachi",  new FibonachiCommandHandler()},
-                {"ShowRandomAndSort", new RandomAndSortCommandHandler()},
-                {"ShowStringHandle", new StringHandleCommandHandler()}
+                {fibHandler.CommandName,  fibHandler},
+                {randAndSortHandler.CommandName, randAndSortHandler},
+                {strHandler.CommandName, strHandler}
             };
 
             Console.WriteLine("Введите команду: ");
